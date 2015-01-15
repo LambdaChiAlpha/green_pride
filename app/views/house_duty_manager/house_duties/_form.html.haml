@@ -1,0 +1,20 @@
+= form_for house_duty do |f|
+  - unless house_duty.new_record?
+    = f.hidden_field :id
+
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: "form-control"
+
+  .form-group
+    = f.label :description
+    = f.text_area :description, class: "form-control", rows: 4
+
+  .form-group
+    = f.label :default_count
+    = f.number_field :default_count, min: 1
+
+  - if house_duty.new_record?
+    = f.submit "Create", class: "btn btn-success"
+  - else
+    = f.submit "Update", class: "btn btn-success"

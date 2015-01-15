@@ -1,0 +1,16 @@
+%h1 House Duties
+
+= link_to "Add new house duty", new_house_duty_manager_house_duty_path
+
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th Default Count
+  %tbody
+    - @house_duties.each do |house_duty|
+      %tr
+        %td= link_to house_duty.name, edit_house_duty_manager_house_duty_path(house_duty)
+        %td= house_duty.description
+        %td= house_duty.default_count

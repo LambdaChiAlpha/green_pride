@@ -9,5 +9,10 @@ Rails.application.routes.draw do
     get :associate_membership
   end
 
+  namespace :house_duty_manager do
+    resources :house_duties
+    resources :weekly_rosters
+  end
+
   devise_for :users, controllers: { sessions: 'users/sessions' }
 end
