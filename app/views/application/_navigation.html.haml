@@ -1,0 +1,18 @@
+%nav.navbar.navbar-default.navbar-fixed-top{ role: "navigation" }
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
+      %span.sr-only Toggle navigation
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    .collapse.navbar-collapse#bs-example-navbar-collapse-1
+      %ul.nav.navbar-nav.pull-right
+        - if current_user.present?
+          %li
+            = link_to current_user.name, '#'
+          %li
+            = link_to "Log out", destroy_user_session_path, method: :delete
+        - else
+          %li
+            = link_to "Log In", new_user_session_path

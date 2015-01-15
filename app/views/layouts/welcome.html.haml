@@ -2,19 +2,12 @@
 %html
   %head
     %title Green Pride | #{ content_for :title }
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag    'welcome', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
     .container-fluid
-      %nav.navbar.navbar-default.navbar-fixed-top{ role: "navigation" }
-        .container-fluid
-          .navbar-header
-            %button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
-            %span.sr-only Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
+      = render partial: 'navigation'
       .row.call-to-action
         .col-md-10.col-md-offset-1
           .jumbotron
