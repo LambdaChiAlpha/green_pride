@@ -1,17 +1,24 @@
+- content_for :title, "New Roster"
+
 %h1 New Roster
 
 %p Uncheck all house duties that don't need to be done.
 
-%table.table
-  %thead
-    %tr
-      %th
-      %th House Duty
-      %th Number of People Needed
-  = form_tag [:house_duty_manager, :weekly_rosters] do
+= form_for @weekly_roster do |f|
+  %table.table
+    %thead
+      %tr
+        %th
+        %th House Duty
+        %th Number of People Needed
     %tbody
-      - @house_duties.each do |house_duty|
-        %tr
-          %td= check_box_tag [:needs_assignments, house_duty], "1", true
-          %td= house_duty.name
-          %td= number_field_tag "house_duty_#{house_duty.id}_count", 1, min: 1
+      - f.object.allotments.each do |allotment|
+        = f.fields_for :allotments, allotment do |ff|
+          %tr
+            = ff.hidden_field :house_duty_id, value: allotment.house_duty_id
+            %td= ff.check_box :needed
+            %td= allotment.house_duty.name
+            %td= ff.number_field :count
+
+  = f.submit "Generate Roster"
+

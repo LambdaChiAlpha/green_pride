@@ -1,12 +1,15 @@
+- content_for :title, "Weekly Rosters"
+
 %h1 Weekly Rosters
 
-= link_to "Generate a roster for this week", new_house_duty_manager_weekly_roster_path
+= link_to new_house_duty_manager_weekly_roster_path do
+  .btn.btn-default Generate A Roster
 
 %table.table
   %thead
     %tr
-      %th Created On
+      %th Created At
   %tbody
     - @weekly_rosters.each do |weekly_roster|
       %tr
-        %td= weekly_roster.created_on
+        %td= weekly_roster.created_at

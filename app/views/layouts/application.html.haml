@@ -8,7 +8,8 @@
   %body
     .container-fluid
       = render partial: 'navigation'
-      = render partial: 'flash'
       .row-fluid.pushdown
-        .col-md-9.col-md-offset-2
+        .col-md-8.col-md-offset-2
+          = render partial: 'flash'
+          = render partial: 'subnavigation'
           = yield

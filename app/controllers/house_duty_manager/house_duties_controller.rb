@@ -8,10 +8,10 @@ class HouseDutyManager::HouseDutiesController < ApplicationController
   end
 
   def create
-    @house_duty = HouseDutyManager::HouseDuty.new(house_duty_params)
+    house_duty = HouseDutyManager::HouseDuty.new(house_duty_params)
 
-    if @house_duty.save
-      flash[:success] = "Created \"#{@house_duty.name}\"!"
+    if house_duty.save
+      flash[:success] = "Created \"#{house_duty.name}\"!"
       redirect_to house_duty_manager_house_duties_path
     else
       redirect_to :back

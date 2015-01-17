@@ -1,6 +1,9 @@
+- content_for :title, "House Duties"
+
 %h1 House Duties
 
-= link_to "Add new house duty", new_house_duty_manager_house_duty_path
+= link_to new_house_duty_manager_house_duty_path do
+  .btn.btn-default New House Duty
 
 %table.table
   %thead

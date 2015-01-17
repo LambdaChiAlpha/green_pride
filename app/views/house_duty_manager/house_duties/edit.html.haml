@@ -1,3 +1,6 @@
+- content_for :title do
+  Edit "#{@house_duty.name}"
+
 %h1 Edit "#{@house_duty.name}"
 
 = render partial: "house_duty_manager/house_duties/form", locals: { house_duty: @house_duty }
