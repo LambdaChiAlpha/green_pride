@@ -1,0 +1,14 @@
+- next_week = @weekly_roster.created_at.next_week
+%h1 Weekly Roster for #{next_week.strftime("%B %d, %Y")}
+
+- @weekly_roster.allotments.each do |allotment|
+  %h2
+    = allotment.house_duty.name
+    %small #{allotment.assignments.count} people assigned
+
+  = link_to "Send Reminder for Sunday", "#"
+  = link_to "Send Reminder for Wednesday", "#"
+
+  %ul
+    - allotment.assignments.each do |assignment|
+      %li= assignment.user.name

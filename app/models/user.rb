@@ -4,4 +4,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :invitable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  scope :actives, -> { all }
+  scope :in_house, -> { all }
 end

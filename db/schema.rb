@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150117051708) do
+ActiveRecord::Schema.define(version: 20150119031055) do
+
+  create_table "house_duty_manager_assignments", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "allotment_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "house_duty_manager_house_duties", force: true do |t|
     t.string   "name"

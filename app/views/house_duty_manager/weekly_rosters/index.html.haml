@@ -12,4 +12,4 @@
   %tbody
     - @weekly_rosters.each do |weekly_roster|
       %tr
-        %td= weekly_roster.created_at
+        %td= link_to weekly_roster.created_at, house_duty_manager_weekly_roster_path(weekly_roster)
