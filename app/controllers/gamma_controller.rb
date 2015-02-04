@@ -1,0 +1,2 @@
+class GammaController < ApplicationController
+end
