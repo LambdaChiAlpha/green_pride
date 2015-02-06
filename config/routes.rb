@@ -18,5 +18,9 @@ Rails.application.routes.draw do
     root 'gamma#index'
   end
 
+  namespace :alpha do
+    root 'alpha#index'
+  end
+
   devise_for :users, controllers: { sessions: 'users/sessions' }
 end
