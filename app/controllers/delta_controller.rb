@@ -1,0 +1,2 @@
+class DeltaController < ApplicationController
+end

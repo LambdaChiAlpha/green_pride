@@ -13,14 +13,6 @@ Rails.application.routes.draw do
     resources :house_duties
     resources :weekly_rosters
   end
-  
-  namespace :alpha do
-    root 'alpha#index'
-  end
-
-  namespace :delta do
-    root 'delta#index'
-  end
 
   namespace :beta do
     resources :beta
@@ -30,7 +22,9 @@ Rails.application.routes.draw do
     root 'gamma#index'
   end
 
-  
+  namespace :alpha do
+    root 'alpha#index'
+  end
 
   devise_for :users, controllers: { sessions: 'users/sessions' }
 end
