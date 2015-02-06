@@ -14,5 +14,9 @@ Rails.application.routes.draw do
     resources :weekly_rosters
   end
 
+  namespace :gamma do
+    root 'gamma#index'
+  end
+
   devise_for :users, controllers: { sessions: 'users/sessions' }
 end
