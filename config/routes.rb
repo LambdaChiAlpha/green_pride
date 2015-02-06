@@ -13,14 +13,20 @@ Rails.application.routes.draw do
     resources :house_duties
     resources :weekly_rosters
   end
+  
+  namespace :alpha do
+    root 'alpha#index'
+  end
+
+  namespace :delta do
+    root 'delta#index'
+  end
 
   namespace :gamma do
     root 'gamma#index'
   end
 
-  namespace :alpha do
-    root 'alpha#index'
-  end
+  
 
   devise_for :users, controllers: { sessions: 'users/sessions' }
 end
