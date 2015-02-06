@@ -14,5 +14,9 @@ Rails.application.routes.draw do
     resources :weekly_rosters
   end
 
+  namespace :beta do
+    resources :beta
+  end
+
   devise_for :users, controllers: { sessions: 'users/sessions' }
 end
