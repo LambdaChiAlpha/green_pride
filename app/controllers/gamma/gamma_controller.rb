@@ -1,5 +1,6 @@
 class Gamma::GammaController < ApplicationController
 
-def index
-end
+  def index
+  end
+
 end

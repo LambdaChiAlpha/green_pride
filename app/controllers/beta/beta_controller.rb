@@ -1,5 +1,6 @@
-class BetaController < ApplicationController
-  layout "welcome"
+class Beta::BetaController < ApplicationController
+
   def index
   end
+
 end
