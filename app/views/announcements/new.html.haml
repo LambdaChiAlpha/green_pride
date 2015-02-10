@@ -1,0 +1,40 @@
+- content_for :title, "New Announcement"
+
+= form_for @announcement do |f|
+  .form-group
+    = f.label :title
+    = f.text_field :title, class: "form-control"
+  .form-group
+    = f.label :body
+    = f.text_area :body, class: "form-control"
+  .form-group
+    = label_tag :tags
+    %br
+    = text_field_tag :tags, @announcement.tag_list, :class => "form-control", "data-role" => "tagsinput"
+    %script
+      $(document).ready(function(){
+      var tags = new Bloodhound({
+      datumTokenizer: Bloodhound.tokenizers.whitespace,
+      queryTokenizer: Bloodhound.tokenizers.whitespace,
+      prefetch: {
+      url: "/announcements/tags",
+      filter: function(list) {
+      return $.map(list, function(tag) {
+      return { name: tag }; });
+      }
+      }
+      });
+      tags.initialize();
+
+      $('input#tags').tagsinput({
+      typeaheadjs: {
+      name: 'tags',
+      displayKey: 'name',
+      valueKey: 'name',
+      source: tags.ttAdapter()
+      }
+      });
+      });
+
+
+  = f.submit "Create", class: "btn btn-primary"

@@ -26,5 +26,12 @@ Rails.application.routes.draw do
     root 'alpha#index'
   end
 
+  resources :announcements do
+    collection do
+      get :tags
+      get '/tags/*tags', to: 'announcements#tagged', as: 'tagged'
+    end
+  end
+
   devise_for :users, controllers: { sessions: 'users/sessions' }
 end

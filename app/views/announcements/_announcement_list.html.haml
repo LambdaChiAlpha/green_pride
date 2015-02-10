@@ -1,0 +1,20 @@
+- @announcements.group_by {|a| a.created_at.to_date }.each do |(date, announcements)|
+  %h2= date.to_formatted_s(:long)
+  - announcements.each do |announcement|
+    = link_to announcement_path(announcement) do
+      %h3
+        = announcement.title
+        %small= announcement.created_at.to_time.strftime("%l:%M%p").strip
+    %p= announcement.body.truncate(150)
+    - tags = @tags.present? ? announcement.tag_list.reject {|t| @tags.include?(t) } : announcement.tag_list
+    - tags.each do |tag|
+      - if @tags.present?
+        = link_to "#{@tags.to_a.join('/')}/#{tag}" do
+          %span ##{tag}
+      - else
+        = link_to tagged_announcements_path(tag) do
+          %span ##{tag}
+
+
+.row
+  = will_paginate @announcements, renderer: BootstrapPagination::Rails
