@@ -1,0 +1,6 @@
+- content_for :title, "Announcements"
+
+= link_to new_announcement_path do
+  .btn.btn-default New Announcement
+
+= render 'announcement_list'

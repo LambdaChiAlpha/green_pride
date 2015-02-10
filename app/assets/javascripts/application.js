@@ -13,5 +13,7 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require bootstrap-tagsinput
+//= require typeahead.bundle
 //= require turbolinks
 //= require_tree .

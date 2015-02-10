@@ -12,4 +12,6 @@
         .col-md-8.col-md-offset-2
           = render partial: 'flash'
           = render partial: 'subnavigation'
+          .page-header
+            %h1= content_for :title
           = yield

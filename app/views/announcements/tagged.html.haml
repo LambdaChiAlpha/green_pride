@@ -1,0 +1,3 @@
+- content_for :title, "Announcements tagged with: #{@tags.to_a.map {|t| "##{t}" }.join(", ")}"
+
+= render 'announcement_list'

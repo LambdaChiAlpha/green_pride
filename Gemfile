@@ -31,3 +31,6 @@ gem 'spring',        group: :development
 
 gem 'devise'
 gem 'devise_invitable'
+
+gem 'acts-as-taggable-on'
+gem 'will_paginate-bootstrap'
