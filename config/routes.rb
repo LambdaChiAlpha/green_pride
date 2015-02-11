@@ -21,6 +21,10 @@ Rails.application.routes.draw do
   namespace :gamma do
     root 'gamma#index'
   end
+  
+  namespace :user_profile do
+    root 'user_profile#index'
+  end
 
   namespace :alpha do
     root 'alpha#index'
