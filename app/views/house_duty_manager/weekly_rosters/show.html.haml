@@ -1,5 +1,5 @@
 - next_week = @weekly_roster.created_at.next_week
-%h1 Weekly Roster for #{next_week.strftime("%B %d, %Y")}
+- content_for :title, "Weekly Roster for #{next_week.strftime("%B %d, %Y")}"
 
 - @weekly_roster.allotments.each do |allotment|
   %h2
