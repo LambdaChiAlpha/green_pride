@@ -10,24 +10,29 @@ Rails.application.routes.draw do
   end
 
   namespace :house_duty_manager do
+    root 'public#index'
     resources :house_duties
     resources :weekly_rosters
   end
 
+  namespace :alpha do
+    root 'public#index'
+  end
+
   namespace :beta do
-    resources :beta
+    root 'public#index'
   end
 
   namespace :gamma do
-    root 'gamma#index'
-  end
-  
-  namespace :user_profile do
-    root 'user_profile#index'
+    root 'public#index'
   end
 
-  namespace :alpha do
-    root 'alpha#index'
+  namespace :delta do
+    root 'public#index'
+  end
+
+  namespace :user_profile do
+    root 'user_profile#index'
   end
 
   resources :announcements do

@@ -1,2 +1,5 @@
-class DeltaController < ApplicationController
+class Delta::PublicController < ApplicationController
+  def index
+
+  end
 end
