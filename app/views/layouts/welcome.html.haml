@@ -13,6 +13,6 @@
           .jumbotron
             %h1 Don&rsquo;t Pledge A Fraternity
             %p.lead Join a Brotherhood
-            %button.btn Learn More
+            = link_to "Learn More", learn_more_about_path, class: "btn btn-default"
 
       = yield

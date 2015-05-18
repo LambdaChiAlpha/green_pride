@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   namespace :learn_more do
+    get :about
     get :associate_membership
+    get :symbols
+    get :mission
+    get :creed
   end
 
   namespace :house_duty_manager do
