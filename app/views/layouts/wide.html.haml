@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+%html
+  %head
+    %title Green Pride | #{ content_for :title }
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .container-fluid
+      = render partial: 'navigation'
+      .row-fluid.pushdown
+        .col-md-10.col-md-offset-1
+          = render partial: 'flash'
+          = render partial: 'subnavigation'
+          .page-header
+            %h1= content_for :title
+          = yield

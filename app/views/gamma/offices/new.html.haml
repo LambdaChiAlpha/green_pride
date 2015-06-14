@@ -1,0 +1,8 @@
+- content_for :title, "New Office"
+
+= bootstrap_form_for [:gamma, @office] do |f|
+  = f.text_field :title
+  = f.check_box :is_executive_committee_member
+  = f.check_box :held_by_alumni
+
+  = f.submit "Create Office", class: "btn btn-success"

@@ -1,0 +1,19 @@
+- content_for :title, "Users"
+
+= link_to new_user_invitation_path do
+  .btn.btn-default Invite User
+
+%table.table
+  %thead
+    %tr
+      %th TK#
+      %th Name
+      %th Email
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.zeta_number
+        %td= user.name
+        %td= user.email
+
+= will_paginate @users, renderer: BootstrapPagination::Rails

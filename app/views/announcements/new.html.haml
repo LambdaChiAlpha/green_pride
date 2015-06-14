@@ -1,16 +1,12 @@
 - content_for :title, "New Announcement"
 
-= form_for @announcement do |f|
-  .form-group
-    = f.label :title
-    = f.text_field :title, class: "form-control"
-  .form-group
-    = f.label :body
-    = f.text_area :body, class: "form-control"
+= bootstrap_form_for @announcement do |f|
+  = f.text_field :title
+  = f.text_area :body
   .form-group
     = label_tag :tags
-    %br
-    = text_field_tag :tags, @announcement.tag_list, :class => "form-control", "data-role" => "tagsinput"
+    %p.help-block Hint: Pressing <code>,</code> will end a tag.
+    = text_field_tag :tags, @announcement.tag_list, "data-role" => "tagsinput"
     %script
       $(document).ready(function(){
       var tags = new Bloodhound({

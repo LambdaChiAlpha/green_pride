@@ -1,4 +1,4 @@
-class HouseDutyManager::HouseDutiesController < ApplicationController
+class HouseDutyManager::HouseDutiesController < HouseDutyManagerController
   def index
     @house_duties = HouseDutyManager::HouseDuty.all
   end

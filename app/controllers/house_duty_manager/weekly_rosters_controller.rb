@@ -1,6 +1,6 @@
 require 'house_duty_manager/generate_assignments'
 
-class HouseDutyManager::WeeklyRostersController < ApplicationController
+class HouseDutyManager::WeeklyRostersController < HouseDutyManagerController
   def index
     @weekly_rosters = HouseDutyManager::WeeklyRoster.all
   end
