@@ -29,6 +29,8 @@ Rails.application.routes.draw do
 
   namespace :gamma do
     root 'public#index'
+    resources :users
+    resources :offices
   end
 
   namespace :delta do

@@ -1,0 +1,20 @@
+- content_for :title, "Offices"
+
+%table.table
+  %thead
+    %tr
+      %th Title
+      %th Current Officer
+      %th Advisor
+      %th Is EC Member?
+  %tbody
+    - @offices.each do |office|
+      %tr
+        %td= link_to office.title, gamma_office_path(office)
+        %td
+          - if office.current_officer.present?
+            = link_to office.current_officer.name, gamma_user_path(office.current_officer)
+        %td
+          - if office.advisor.present?
+            = link_to office.advisor.name, gamma_user_path(office.advisor)
+        %td= office.is_executive_committee_member? ? "Yes" : "No"
